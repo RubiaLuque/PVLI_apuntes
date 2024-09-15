@@ -1,0 +1,35 @@
+h1 {
+  color: blue;
+}
+
+.clase {
+  color: red;
+}
+
+.col {
+  float: left;
+  padding: 5px;
+}
+
+.fila::after {
+  content: "";
+  clear: both;
+  display: table;
+} 
+
+body{
+  background-color: black;
+}
+
+.PersonaList{
+  color:beige;
+  float: left;
+  padding: 30px;
+  font-size: large;
+}
+
+.Listas::after {
+  content: "";
+  clear: both;
+  display: table;
+} 

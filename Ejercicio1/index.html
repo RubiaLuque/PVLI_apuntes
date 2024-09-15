@@ -1,0 +1,74 @@
+<!--MUXU RUBIA LUQUE-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css"> <!-- Esto cargaria un archivo de estilo, pero no es necesario en Fiddle porque lo hace automáticamente -->
+  <script src="script.js"></script> <!--Aquí podriamos cargar los scripts, también se puede en el <body>, y pasa lo mismo que con el css de antes, en verdad aquí no estamos cargando nada-->
+</head>
+
+<body>
+  <h1>TIER PERSONAJES DE PERSONA 3 RELOAD Y PERSONA 5 ROYAL.</h1>
+
+  <div class="fila">
+    <div class="col">
+      <a href="https://persona.atlus.com/p3r/index.html?lang=en" target="_blank">
+        <img src="https://www.psu.com/wp/wp-content/uploads/2023/10/persona-3-reload-banner.jpeg" alt="Persona 3 img" width="480" height="270"><!--Modifica el atributo src y verás como se muestra el mensaje, pero el link (etiqueta <a>) seguirá funcionando al ser un hijo -->
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="https://persona.atlus.com/p5r/?lang=en" target="_blank">
+        <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2020/03/persona-5-royal-cover-e1584925973620.jpg" alt="Persona 5 img" width="480" height="270"><!--Modifica el atributo src y verás como se muestra el mensaje, pero el link (etiqueta <a>) seguirá funcionando al ser un hijo -->
+      </a>
+    </div>
+  </div>
+
+  <h2 class=clase>Por favor ATLUS no me tires la página web.</h2>
+
+  <div class = "Listas">
+    <div class="PersonaList">
+      <h3>PERSONA 3 RELOAD</h3>
+      <ol>
+        <li>Koromaru</li>
+        <li>Shinjiro Aragaki</li>
+        <li>Yuki Makoto</li>
+        <li>Aigis</li>
+        <li>Chidori Yoshino</li>
+        <li>Akihiko Sanada</li>
+        <li>Junpei Iori</li>
+        <li>Fuuka Yamagishi</li>
+        <li>Yukari Takeba</li>
+        <li>Ren Amada</li>
+      </ol>
+    </div>
+
+    <div class="PersonaList">
+      <h3>PERSONA 5 ROYAL</h3>
+      <ol>
+        <li>Akechi Goro (GOAT)</li>
+        <li>Joker</li>
+        <li>Yusuke Kitagawa</li>
+        <li>Kasumi Yoshizawa</li>
+        <li>Futaba Sakura</li>
+        <li>Ann Takamaki</li>
+        <li>Ryuji Sakamoto</li>
+        <li>Makoto Niijima</li>
+        <li>Shido Masayoshi</li>
+        <li>Morgana</li>
+      </ol>
+    </div>
+  </div>
+
+  <div>
+    <button onclick="alert(devuelveTextoDeAlerta())">Soy un botón de Alerta</button>
+  </div>
+  <div>
+    <button onclick="document.getElementById('magico').style.visibility='hidden'"> Desaparece!!! </button>
+    <button onclick="desaparece('magico')"> Desaparece!!! (pero usando una función) </button>
+  </div>
+</body>
+<!--2024-2025-->
+</html>
