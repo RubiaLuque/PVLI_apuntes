@@ -32,42 +32,44 @@
     <div class="PersonaList">
       <h3>PERSONA 3 RELOAD</h3>
       <ol>
-        <li>Koromaru</li>
-        <li>Shinjiro Aragaki</li>
-        <li>Yuki Makoto</li>
-        <li>Aigis</li>
-        <li>Chidori Yoshino</li>
-        <li>Akihiko Sanada</li>
-        <li>Junpei Iori</li>
-        <li>Fuuka Yamagishi</li>
-        <li>Yukari Takeba</li>
-        <li>Ren Amada</li>
+        <li name="si">Koromaru</li>
+        <li name="si">Shinjiro Aragaki</li>
+        <li name="si">Yuki Makoto</li>
+        <li name="si">Aigis</li>
+        <li name="si">Chidori Yoshino</li>
+        <li name="no">Akihiko Sanada</li>
+        <li name="si">Junpei Iori</li>
+        <li name="no">Fuuka Yamagishi</li>
+        <li name="no">Yukari Takeba</li>
+        <li name="no">Ren Amada</li>
       </ol>
     </div>
 
     <div class="PersonaList">
       <h3>PERSONA 5 ROYAL</h3>
       <ol>
-        <li>Akechi Goro (GOAT)</li>
-        <li>Joker</li>
-        <li>Yusuke Kitagawa</li>
-        <li>Kasumi Yoshizawa</li>
-        <li>Futaba Sakura</li>
-        <li>Ann Takamaki</li>
-        <li>Ryuji Sakamoto</li>
-        <li>Makoto Niijima</li>
-        <li>Shido Masayoshi</li>
-        <li>Morgana</li>
+        <li name="si" >Akechi Goro (GOAT)</li>
+        <li name="si">Joker</li>
+        <li name="si">Yusuke Kitagawa</li>
+        <li name="no">Kasumi Yoshizawa</li>
+        <li name="si">Futaba Sakura</li>
+        <li name="si">Ann Takamaki</li>
+        <li name="no">Ryuji Sakamoto</li>
+        <li name="no">Makoto Niijima</li>
+        <li name="no">Shido Masayoshi</li>
+        <li name="no">Morgana</li>
       </ol>
     </div>
   </div>
 
   <div>
-    <button onclick="alert(devuelveTextoDeAlerta())">Soy un botón de Alerta</button>
+    <button onclick="alert(devuelveTextoDeAlerta())">Alerta!</button>
   </div>
   <div>
-    <button onclick="document.getElementById('magico').style.visibility='hidden'"> Desaparece!!! </button>
-    <button onclick="desaparece('magico')"> Desaparece!!! (pero usando una función) </button>
+    <!--<button onclick="document.getElementById('magico').style.visibility='hidden'"> Desaparece!!! </button> -->
+    <button onclick="desaparece('no')"> GOATs </button>
+    <button onclick="desaparece('si')"> No molan </button>
+
   </div>
 </body>
 <!--2024-2025-->
