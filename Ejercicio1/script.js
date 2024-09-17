@@ -3,12 +3,12 @@ function devuelveTextoDeAlerta() {
 }
 
 function desaparece(nombre) {
-	let buttons = document.getElementsByName(nombre);
-  for(let i = 0; i < buttons.length; ++i){
-    if(buttons[i].style.visibility==='visible'){
-      buttons[i].style.visibility='hidden';
+	let elems = document.getElementsByName(nombre);
+  for(let i = 0; i < elems.length; ++i){
+    if(elems[i].style.visibility==='hidden'){
+      elems[i].style.visibility ='visible';
     }
-    else buttons[i].style.visibility='visible';
+    else elems[i].style.visibility ='hidden';
   }
 }
 

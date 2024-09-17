@@ -1,14 +1,21 @@
 h1 {
   color: blue;
+  text-align: center;
 }
 
 .clase {
   color: red;
+  text-align: center;
 }
 
 .col {
   float: left;
-  padding: 5px;
+  padding: 10px;
+  display: block;
+}
+
+.fila{
+  margin-left: 18%;
 }
 
 .fila::after {
@@ -23,13 +30,73 @@ body{
 
 .PersonaList{
   color:beige;
-  float: left;
-  padding: 30px;
+  float: none;
+  padding: 20px;
   font-size: large;
+  display: inline-block;
+  text-align: left;
 }
 
+.Listas{
+  text-align: center;
+}
 .Listas::after {
   content: "";
   clear: both;
   display: table;
 } 
+
+.btn{
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.si {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.si:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.no {
+  border-color: #f44336;
+  color: red
+}
+
+.no:hover {
+  background: #f44336;
+  color: white;
+}
+
+.colors {
+  background: #ffea00;
+  color: black;
+}
+
+.colors:hover {
+  border-color: #ffea00;
+  color: black;
+  background: white;
+}
+
+hr.rounded{
+  border-top: 8px solid blue;
+  border-radius: 5px;
+}
+
+.adButtons{
+  margin-left: 43%;
+}
+
+.colorButton{
+  margin-left: 46%;
+  margin-top: 5px;
+}
