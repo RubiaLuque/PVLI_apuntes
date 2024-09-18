@@ -1,6 +1,8 @@
+/*
 function devuelveTextoDeAlerta() {
   return "Alerta";
 }
+*/
 
 function desaparece(nombre) {
 	let elems = document.getElementsByName(nombre);
@@ -13,10 +15,19 @@ function desaparece(nombre) {
 }
 
 function colores(nombre){
-  let elems = document.getElementsByClass(nombre);
-  for(let i = 0; i < elems.length; ++i){
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    elems[i].color = "#" + randomColor;
-    elems[i].color.innerHTML = "#" + randomColor;
+  var elems = document.getElementsByClassName(nombre);
+  for(let i = 0; i<elems.length; i++){
+    console.log(elems[i])
+    elems[i].style.color = randomColor();
   }
+}
+
+
+function randomColor() {
+  let letras = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letras[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }

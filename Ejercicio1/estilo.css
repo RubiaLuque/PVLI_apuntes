@@ -29,7 +29,6 @@ body{
 }
 
 .PersonaList{
-  color:beige;
   float: none;
   padding: 20px;
   font-size: large;
@@ -38,6 +37,7 @@ body{
 }
 
 .Listas{
+  color:beige;
   text-align: center;
 }
 .Listas::after {
