@@ -26,6 +26,7 @@ h1 {
 
 body{
   background-color: black;
+  cursor:url(media/pointer2.png),auto;
 }
 
 .PersonaList{
@@ -99,4 +100,9 @@ hr.rounded{
 .colorButton{
   margin-left: 46%;
   margin-top: 5px;
+}
+
+.clockImage{
+  margin-top: 10px;
+  text-align: center;
 }
