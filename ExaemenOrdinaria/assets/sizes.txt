@@ -1,0 +1,42 @@
+
+/**
+SPRITESHEETS
+__________________
+'assets/player.png', {frameWidth: 14, frameHeight: 14}  // Jugador idle y volar
+'assets/dead.png', {frameWidth: 16, frameHeight: 16}	// Jugador muerte
+'assets/balloon.png', {frameWidth: 12, frameHeight: 12} // Globo
+'assets/star.png', {frameWidth: 10, frameHeight: 10}    // Rayo
+
+'assets/enemy.png', {frameWidth: 16, frameHeight: 16} //Enemigo volar y caer
+
+'assets/splash.png', {frameWidth: 16, frameHeight: 16} // Salpicadura, no es necesaria, pero ahí está
+
+**/
+
+/**
+IMAGENES
+'assets/cloud.png' // la nube que genera rayos
+'assets/libe.png' // icono de la web, no se usa para nada más
+'assets/tileset.png //tileset para el tilemap
+
+'assets/terrain.png' //imagen de lo que seria el tilemap, su uso puntúa mucho menos que el uso del tilemap
+**/
+
+/**
+ANIMACIONES
+_____________________
+idle jugador (frame 6)
+volar jugador (frame 6 al 8)
+morir jugador (frame 0 al 2)
+
+idle enemigo, la caida (frame 0 al 2)
+volar enemigo (frame 3 al 5)
+morir enemigo (frame 6)
+
+globo (frame 0)
+explotar globo (frame 1)
+
+rayo (frames 0 al 4)
+
+salpicadura de agua (frames 0 al 3) no es necesaria, pero ahí está
+**/

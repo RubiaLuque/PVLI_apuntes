@@ -1,0 +1,28 @@
+{
+    "activeFile": "terrain.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        "terrain.tmx": {
+            "scale": 1.5754166666666667,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 239.9365247289077,
+                "y": 159.64030679714358
+            }
+        },
+        "terrain.tmx#tileset": {
+            "scaleInDock": 1
+        }
+    },
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+        "terrain.tmx"
+    ],
+    "project": "balloonFight.tiled-project",
+    "recentFiles": [
+        "terrain.tmx"
+    ]
+}

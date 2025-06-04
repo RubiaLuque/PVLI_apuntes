@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'balloonfont';
+	src: url('../assets/bubblicious.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'arcade';
+	src: url('../assets/arcade.ttf') format('truetype');
+}
+
+h1 {
+  text-align: center;
+}
