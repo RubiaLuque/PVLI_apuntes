@@ -1,5 +1,7 @@
 import MainMenu from "./MainMenu.js";
 import Level from "./Level.js";
+import GameOver from "./GameOver.js";
+import Win from "./Win.js";
 /**
  * Inicio del juego en Phaser. Creamos el archivo de configuración del juego y creamos
  * la clase Game de Phaser, encargada de crear e iniciar el juego.
@@ -21,7 +23,7 @@ export let config = {
             height: 640  
         }
 	},
-	scene: [MainMenu, Level],
+	scene: [MainMenu, Level, GameOver, Win],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 

@@ -21,6 +21,8 @@ export default class Player extends Phaser.GameObjects.Sprite{
     }
 
     update() {
+
+        //TODO movimmiento toroidal
         this.body.velocity.x = 0;
 
         if (this.keyZ.isDown) {
