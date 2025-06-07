@@ -49,6 +49,8 @@ export default class Level extends Phaser.Scene{
         this.player = new Player(this, 50, 10);
         this.physics.add.collider(this.player, this.groundLayer);
         this.physics.add.collider(this.player.balloon, this.groundLayer);
+
+        
         /*this.physics.add.overlap(this.player, this.waterLayer, () => {
             this.scene.start("GameOver");
         });*/
@@ -68,12 +70,21 @@ export default class Level extends Phaser.Scene{
                 //PIERDE EL JUGADOR
                 //Solo funciona si el enemigo tiene globo y no esta muerto
                 if (!this.enemies[i].withoutBalloon && !this.enemies[i].isDead) {
-                    //TODO Animacion de explotar globo
-                    //TODO Animacion muerte jugador
-                    
+                    //Animacion de explotar globo
+                    this.player.balloon.play("balloonExplosion");
+                    //Animacion muerte jugador
+                    this.player.play("playerDeath");
                     this.player.balloon.setActive(false);
-                    this.player.balloon.setVisible(false);
                     this.player.balloon.body.setEnable(false);
+
+                    //Asi da tiempo a verse la animacion
+                    this.time.addEvent({
+                        delay: 200,
+                        callback: () => {
+                            this.player.balloon.setVisible(false);
+                        }
+                    });
+
                     this.player.setActive(false);
                     this.time.addEvent({
                         delay: 2000,
@@ -89,11 +100,20 @@ export default class Level extends Phaser.Scene{
 
             this.physics.add.overlap(this.player, this.enemies[i].enemyBalloon, () => {
                 //Enemigo cae
-                //TODO Animacion de explotar globo
-                this.enemies[i].enemyBalloon.setActive(false);
-                this.enemies[i].enemyBalloon.setVisible(false);
-                this.enemies[i].enemyBalloon.body.setEnable(false); //Se quita de las fisicas
+                
+                //Animacion de explotar globo
+                this.enemies[i].enemyBalloon.play("balloonExplosion");
                 this.balloonExplosionSound.play();
+                this.enemies[i].enemyBalloon.setActive(false);
+                this.enemies[i].enemyBalloon.body.setEnable(false); //Se quita de las fisicas
+                
+                this.time.addEvent({
+                    delay: 200,
+                    callback: () => {
+                        this.enemies[i].enemyBalloon.setVisible(false);
+                    }
+                });
+                
                 this.score += 300;
                 this.enemies[i].withoutBalloon = true;
                 //no chocable durante 1 segundo --> Añadir booleano de no colision
@@ -114,6 +134,7 @@ export default class Level extends Phaser.Scene{
                             this.enemies[i].enemyBalloon.setActive(true);
                             this.enemies[i].enemyBalloon.setVisible(true);
                             this.enemies[i].enemyBalloon.body.setEnable(true); //Se vuelve a meter en las fisicas
+                            this.enemies[i].enemyBalloon.play("balloonIdle");
                         }
                     }
                 })
@@ -125,7 +146,9 @@ export default class Level extends Phaser.Scene{
 
                 //comprobar booleano de no colision
                 if (this.enemies[i].withoutBalloon && !this.enemies[i].notCollisionable && !this.enemies[i].isDead) {
-                    //TODO animacion muerte enemigo
+                    //animacion muerte enemigo
+                    this.enemies[i].play("enemyDeath");
+
                     this.remainingEnemies--;
                     this.enemies[i].isDead = true;
                     this.enemies[i].setVisible(false);
