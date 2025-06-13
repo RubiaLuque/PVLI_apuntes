@@ -1,5 +1,6 @@
 import Player from "./Player.js"
 import Enemy from "./Enemy.js"
+import Cloud from "./Cloud.js"
 export default class Level extends Phaser.Scene{
     constructor() {
         super({ key: "Level" });
@@ -13,8 +14,11 @@ export default class Level extends Phaser.Scene{
         this.load.tilemapTiledJSON("map", "assets/terrain.json");
         //Imagen con el propio tileset
         this.load.image("tiles", "assets/tileset.png");
-        
 
+        //Nube
+        this.load.image("cloudImage", "assets/cloud.png");
+
+        this.load.spritesheet("lightningSheet", "assets/star.png", { frameWidth: 10, frameHeight: 10 });
         this.load.spritesheet("playerSheet", "assets/player.png", { frameWidth: 14, frameHeight: 14 });
         this.load.spritesheet("balloonSheet", "assets/balloon.png", { frameWidth: 12, frameHeight: 12 });
         this.load.spritesheet("enemySheet", "assets/enemy.png", { frameWidth: 16, frameHeight: 16 });
@@ -51,9 +55,10 @@ export default class Level extends Phaser.Scene{
         this.physics.add.collider(this.player.balloon, this.groundLayer);
 
         
-        /*this.physics.add.overlap(this.player, this.waterLayer, () => {
+        this.physics.add.collider(this.player, this.waterLayer, () => {
+            this.looseSound.play();
             this.scene.start("GameOver");
-        });*/
+        });
 
         //Crear enemigos
         this.enemies = [];
@@ -159,7 +164,56 @@ export default class Level extends Phaser.Scene{
             });
             console.log(this.enemies[i]);
         }
-                
+        
+        this.isCloud = false;
+        this.time.addEvent({
+            delay: 5000,
+            callback: () => {
+                this.cloud = new Cloud(this, 150, 30);
+                this.isCloud = true;
+
+                //Choque jugador y nube
+                this.physics.add.overlap(this.player, this.cloud, () => {
+                    
+                    //Animacion muerte jugador
+                    this.player.play("playerDeath");
+
+                    this.player.setActive(false);
+                    this.time.addEvent({
+                        delay: 2000,
+                        callback: () => {
+                            this.looseSound.play();
+    
+                            this.scene.start("GameOver");
+                        }
+                    })
+                })
+
+                //Choque jugador y rayo
+                this.physics.add.overlap(this.player, this.cloud.lightning, () => {
+                    //Animacion muerte jugador
+                    this.player.play("playerDeath");
+
+                    this.player.setActive(false);
+                    this.time.addEvent({
+                        delay: 2000,
+                        callback: () => {
+                            this.looseSound.play();
+    
+                            this.scene.start("GameOver");
+                        }
+                    })
+                })
+
+                //Choque rayo con la tierra
+                this.physics.add.collider(this.groundLayer, this.cloud.lightning, () => {
+                    this.cloud.lightning.velY *= (-1);
+            
+                    this.cloud.lightning.body.velocity.y = this.cloud.lightning.velY; //Invertir la y
+                    console.log(this.cloud.lightning.body.velocity.y);
+                });
+            }
+        })
         
     }
 
@@ -181,6 +235,10 @@ export default class Level extends Phaser.Scene{
                     this.scene.start("Win", { score: this.score });
                 }
             })
+        }
+
+        if (this.isCloud) {
+            this.cloud.update();   
         }
 
         this.scoreText.text = "Score: " + this.score;
