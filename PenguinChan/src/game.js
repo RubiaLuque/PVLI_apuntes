@@ -1,5 +1,6 @@
 import MainMenu from "./MainMenu.js"
 import Level from "./Level.js"
+import FinalScene from "./FinalScene.js"
 
 let config = {
 	type: Phaser.AUTO,
@@ -14,7 +15,7 @@ let config = {
 		height: 512,
 		zoom: 1
 	},
-	scene: [MainMenu, Level],
+	scene: [MainMenu, Level, FinalScene],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 

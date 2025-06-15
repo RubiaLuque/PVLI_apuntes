@@ -37,13 +37,13 @@ export default class MainMenu extends Phaser.Scene{
 
         if (this.spaceKey.isDown) {
             if (this.selector.y === 155) {
-                //TODO COMIENZA MODO 1 JUGADOR
-                this.scene.start("Level");
+                //COMIENZA MODO 1 JUGADOR
+                this.scene.start("Level", {versus: false});
                 
             }
             else if(this.selector.y === 210) {
-                //TODO COMIENZA MODO VERSUS
-                
+                //COMIENZA MODO VERSUS
+                this.scene.start("Level", {versus: true});
             }
         }
     }
